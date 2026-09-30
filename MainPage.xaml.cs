@@ -130,7 +130,7 @@ public partial class MainPage : ContentPage
 
         double v = Parse(_saisie);
         // "50 + 10 %" => 10 % de 50 = 5 ; sinon simple division par 100
-        v = _operateur != null ? _operande * v / 100 : v / 100;
+        v = (_operateur == "+" || _operateur == "−") ? _operande * v / 100 : v / 100;
         _saisie = Format(v);
         _nouvelleSaisie = false;
         MettreAJour();
